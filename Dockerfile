@@ -7,15 +7,15 @@ LABEL maintainer="Sven Höper <sven@hoeper.me>" \
   org.label-schema.schema-version="1.0"
 
 RUN export DEBIAN_FRONTEND=noninteractive \
-  &&  apt-get update \
-  &&  apt-get install -y --no-install-recommends git wget ca-certificates \
-  &&  rm -rf /var/lib/apt/lists/* \
-  &&  rm -rf /usr/share/man/?? \
-  &&  rm -rf /usr/share/man/??_* \
-  &&  rm -rf /usr/share/doc/ \
-  &&  echo "SOURCE_COMMIT=$SOURCE_COMMIT" \
-  &&  git config --global user.email "git@docker.example.com" \
-  &&  git config --global user.name "git@docker"
+  && apt-get update \
+  && apt-get install -y --no-install-recommends git wget ca-certificates \
+  && rm -rf /var/lib/apt/lists/* \
+  && rm -rf /usr/share/man/?? \
+  && rm -rf /usr/share/man/??_* \
+  && rm -rf /usr/share/doc/ \
+  && env \
+  && git config --global user.email "git@docker.example.com" \
+  && git config --global user.name "git@docker"
 
 VOLUME /data
 WORKDIR /data
