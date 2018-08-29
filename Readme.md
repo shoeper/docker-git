@@ -11,3 +11,13 @@ Image providing git and wget
 ```bash
 docker run -it --rm -v $(pwd):/data shoeper/git clone https://github.com/shoeper/docker-git-debian.git
 ```
+
+### Gitlab CI
+
+Use as follows to overwrite the entrypoint. A shell will be used instead and it is possible to use git and wget.
+
+```
+image: 
+  name: shoeper/git:latest
+  entrypoint: [""]
+```
