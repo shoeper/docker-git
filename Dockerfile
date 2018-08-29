@@ -1,9 +1,11 @@
 FROM debian:stable-slim
 
 LABEL maintainer="Sven Höper <sven@hoeper.me>" \
-  name="shoeper/git-debian" \
-  vcs-url="https://github.com/shoeper/docker-git-debian" \
-  vcs-ref="master"
+  org.label-schema.name="shoeper/git-debian" \
+  org.label-schema.description="Simple Docker image providing git and wget based on Debian Stable" \
+  org.label-schema.vcs-url="https://github.com/shoeper/docker-git-debian" \
+  org.label-schema.vcs-ref="master" \
+  org.label-schema.schema-version="1.0"
 
 RUN export DEBIAN_FRONTEND=noninteractive \
   &&  apt-get update \
