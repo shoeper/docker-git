@@ -8,7 +8,7 @@ LABEL maintainer="Sven Höper <sven@hoeper.me>" \
 
 RUN export DEBIAN_FRONTEND=noninteractive \
   && apt-get update \
-  && apt-get install -y --no-install-recommends git wget ca-certificates \
+  && apt-get install -y --no-install-recommends git wget ca-certificates openssh-client \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /usr/share/man/?? \
   && rm -rf /usr/share/man/??_* \
